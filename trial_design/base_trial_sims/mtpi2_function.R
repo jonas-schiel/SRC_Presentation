@@ -5,7 +5,7 @@
 #1. Trial cannot administer more than n_max patients 
 #2. Trial will end once a 95% credible interval at dose_j (last administered 
 #   dose) falls below a given width
-#3. If the posterior probability of a DLT at dose_j exceeds 90%, the dose is
+#3. If the posterior probability of a DLT at dose_j exceeds 65%, the dose is
 #   removed from the trial
 #
 ################################################################################
@@ -130,10 +130,10 @@ mTPI2_sim_func <- function(p_t, e1, e2, doses, dlt_probs, n_max, ci_end_width) {
     mTPI2_trial_data <- rbind(mTPI2_trial_data, new_data)
     
     posterior_safety_check <- pbeta(p_t, a_star, b_star, lower.tail = FALSE)
-    if (posterior_safety_check >= 0.85 && i > 1 && n_j[i] >= 2) {
+    if (posterior_safety_check >= 0.65 && i > 1 && n_j[i] > 2) {
       doses <- doses[1:(i-1)]
     }
-    if (posterior_safety_check >= 0.85 && i == 1 && n_j[i] >= 2) {
+    if (posterior_safety_check >= 0.65 && i == 1 && n_j[i] > 2) {
       # cat("Trial Terminated. Dose 1 exceeds MTD.")
       stop <- 1
       break
