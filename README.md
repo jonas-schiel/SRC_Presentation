@@ -1,5 +1,5 @@
-#BYU Student Research Conference Presentation, February 2026
-##Clinical Trial Dose-Escalation Models
+# BYU Student Research Conference Presentation, February 2026
+## Clinical Trial Dose-Escalation Models
 
 This repository contains my research presentation, as well as the R code used for simulating and comparing several Phase 1 dose-escalation trial designs, including the 3+3, mTPI, mTPI-2, and CRM (Continual Reassessment Method) approaches. The project was developed as part of research with the BYU Statistics Department.
 
