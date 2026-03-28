@@ -1,7 +1,7 @@
 
-source("../trial_design/LargeTrialSim.R")
+source(here("../trial_design/LargeTrialSim.R"))
 
-test <- get_data(doses = c(10, 20, 40, 80, 160, 320), dlt_probs = c(0.01, 0.05, 0.10, 0.25, 0.45, 0.55), 0.3, 0.05, 0.05, 0.45, 60, 100)
+test <- get_data(doses = c(10, 20, 40, 80, 160, 320), dlt_probs = c(0.01, 0.05, 0.10, 0.25, 0.45, 0.55), 0.3, 0.05, 0.05, 0.45, 30, 1000)
 library(ggplot2)
 
 p1 <- ggplot(test$threethree, aes(x=MTD))+

@@ -4,9 +4,9 @@
 #       presentation exactly
 
 
-source("../trial_design/base_trial_sims/3by3_function.R")
-source("../trial_design/base_trial_sims/mtpi_function.R")
-source("../trial_design/base_trial_sims/mtpi2_function.R")
+source(here("../trial_design/base_trial_sims/3by3_function.R"))
+source(here("../trial_design/base_trial_sims/mtpi_function.R"))
+source(here("../trial_design/base_trial_sims/mtpi2_function.R"))
 
 library(ggplot2)
 

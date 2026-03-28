@@ -1,6 +1,6 @@
 # Code used to plot the CRM model plots and trial results
 
-source("../trial_design/crm_design/crmSimulation.R")
+source(here("../trial_design/crm_design/crmSimulation.R"))
 
 
 ##################Get Prior Distribution DataFrame##############################
