@@ -91,14 +91,18 @@ mTPI_sim_func <- function(p_t, err, doses, dlt_probs, n_max, ci_end_width) {
     
     mTPI_trial_data <- rbind(mTPI_trial_data, new_data)
     
+    post_cred <- qbeta(c(0.025, 0.975), a_star, b_star)
+    ci_width <- diff(post_cred)
+    
     posterior_safety_check <- pbeta(p_t, a_star, b_star, lower.tail = FALSE)
     if (posterior_safety_check >= 0.65 && i > 1 && n_j[i] > 2) {
       doses <- doses[1:(i-1)]
       n_j <- n_j[1:(i-1)]
       y_sum_j <- y_sum_j[1:(i-1)]
       post_means <- post_means[1:(i-1)]
-      i <- i - 1  
-    }
+      i <- i - 1 
+      next
+    } 
     if (posterior_safety_check >= 0.65 && i == 1 && n_j[i] > 2) {
       # cat("Trial Terminated. Dose 1 exceeds MTD.")
       stop <- 1
@@ -112,9 +116,6 @@ mTPI_sim_func <- function(p_t, err, doses, dlt_probs, n_max, ci_end_width) {
                                      ifelse(result == 3 && i == 1, 101,
                                             401)))))
     
-    
-    post_cred <- qbeta(c(0.025, 0.975), a_star, b_star)
-    ci_width <- diff(post_cred)
     
     
     if (i == 101) {

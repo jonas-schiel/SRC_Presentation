@@ -26,9 +26,10 @@
 
 get_data <- function(doses, dlt_probs, p_t, e1, e2, ci_end_width, n_max, sims) {
   
-  source(here("base_trial_sims/3by3_function.R"))
-  source(here("base_trial_sims/mtpi_function.R"))
-  source(here("base_trial_sims/mtpi2_function.R"))
+  library(here)
+  source(here("trial_design/base_trial_sims/3by3_function.R"))
+  source(here("trial_design/base_trial_sims/mtpi_function.R"))
+  source(here("trial_design/base_trial_sims/mtpi2_function.R"))
   
   ThreeThree_data <- data.frame(
     patients = integer(),

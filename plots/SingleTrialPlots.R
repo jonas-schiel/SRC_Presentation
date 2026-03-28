@@ -3,10 +3,10 @@
 # Note: Since no seed was used, the plots will not match the plots used in the 
 #       presentation exactly
 
-
-source(here("../trial_design/base_trial_sims/3by3_function.R"))
-source(here("../trial_design/base_trial_sims/mtpi_function.R"))
-source(here("../trial_design/base_trial_sims/mtpi2_function.R"))
+library(here)
+source(here("trial_design/base_trial_sims/3by3_function.R"))
+source(here("trial_design/base_trial_sims/mtpi_function.R"))
+source(here("trial_design/base_trial_sims/mtpi2_function.R"))
 
 library(ggplot2)
 
