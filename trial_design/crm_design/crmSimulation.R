@@ -1,5 +1,6 @@
 # R code used to simulate CRM trials using stan sampler
 
+library(here)
 
 #######Develop and Evaluate Skeletal Prior For the Dose Response Curve##########
 
@@ -42,7 +43,7 @@ prior_data <- list(
 )
 
 prior.model <- stan(
-  file = "present.stan",
+  file = here("trial_design/crm_design/crmModel.stan"),
   data = prior_data,
   iter = 5000,
   warmup = 2000,
